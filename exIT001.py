@@ -17,6 +17,7 @@ def main():
             else:
                 pegaCadastro(pessoas)
         else:
+            print('Programa Finalizado.')
             break
 
     salvaCadastro(pessoas)
@@ -50,13 +51,13 @@ def carregaCadastro():
 
 def recebeCmd():
     while True:
-        print('Adicionar novo cadastro [n].')
-        print('Procurar informações [p].')
-        print('Sair do programa [s].')
-        cmd = input('O que deseja fazer? ')
+        print('N - Adicionar novo cadastro.')
+        print('P - Procurar informações.')
+        print('S - Sair do programa.')
+        cmd = input('Digite sua opção:  ').lower()
 
         if not cmd.isalpha():
-            print('Digite apenas letras.')
+            print('Digite apenas letras. (N, P ou S)')
         elif cmd.startswith('n') or cmd.startswith('p') or cmd.startswith('s'):
             return cmd
         else:
